@@ -80,8 +80,8 @@ Rails.application.configure do
   end
 
   if Anycable.config.debug
-    Anycable.config.logger = Logger.new(STDOUT)
-    Anycable.config.log_level = :debug
+    # config.logger = Logger.new(STDOUT)
+    config.log_level = :debug
   end
 
   # Do not dump schema after migrations.
