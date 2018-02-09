@@ -5,6 +5,12 @@ require ::File.expand_path('../../config/environment', __FILE__)
 
 # Before starting Anycable server
 if ENV['ANYCABLE_DEPLOYMENT']
+  puts ENV['ANYCABLE_DEPLOYMENT']
+  puts 'port'
+  puts ENV['PORT']
+  puts '.'
+  puts ENV['ADDR']
+  puts '@'
   # A very naive way to run external process (but that should be enough for Heroku)
   go_thread = Thread.new do
     Process.wait Process.spawn('anycable-go')
