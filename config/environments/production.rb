@@ -79,6 +79,11 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
+  if Anycable.config.debug
+    Anycable.config.logger = Logger.new(STDOUT)
+    Anycable.config.log_level = :debug
+  end
+
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
